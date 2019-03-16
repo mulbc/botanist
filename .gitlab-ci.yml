@@ -1,0 +1,34 @@
+image: debian:buster
+
+stages:
+  - build
+  - release
+
+build:
+  stage: build
+  script:
+    - apt update
+    - apt install --yes devscripts lintian build-essential
+    - mk-build-deps
+    - apt install --yes ./*build-deps*.deb
+    - dpkg-buildpackage -us -uc
+    - mv ../botanist_* build
+  artifacts:
+    paths:
+    - build/
+    expire_in: 1 week
+
+release:
+  stage: release
+  script:
+    - apt update
+    - apt install --yes devscripts lintian build-essential
+    - mk-build-deps
+    - apt install --yes ./*build-deps*.deb
+    - dpkg-buildpackage -us -uc
+    - mv ../botanist_* build
+  artifacts:
+    paths:
+    - build/
+  only:
+  - tags

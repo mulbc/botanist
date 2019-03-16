@@ -1,0 +1,38 @@
+{
+  "receiver": "wakeup",
+  "status": "firing",
+  "alerts": [
+    {
+      "status": "firing",
+      "labels": {
+        "alertname": "WakeupTest",
+        "instance": "host1",
+        "monitor": "fra-prom1",
+        "phone_number": "000000",
+        "severity": "warning"
+      },
+      "annotations": {
+        "summary": "host1 is down"
+      },
+      "startsAt": "2018-12-06T13:27:37.062827612Z",
+      "endsAt": "2018-12-06T13:35:37.062827612Z",
+      "generatorURL": "http://fra-prom1:9090/graph?g0.expr=1&g0.tab=1"
+    }
+  ],
+  "groupLabels": {
+    "alertname": "WakeupTest"
+  },
+  "commonLabels": {
+    "alertname": "WakeupTest",
+    "instance": "host1",
+    "monitor": "fra-prom1",
+    "phone_number": "000000",
+    "severity": "warning"
+  },
+  "commonAnnotations": {
+    "summary": "host1 is down"
+  },
+  "externalURL": "http://fra-alertmgr:9093",
+  "version": "4",
+  "groupKey": "{}:{alertname=\"WakeupTest\"}"
+}

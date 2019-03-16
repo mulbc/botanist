@@ -1,0 +1,5 @@
+*~
+.vscode/launch.json
+botanist
+botanist.conf
+.DS_Store

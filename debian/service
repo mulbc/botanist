@@ -1,0 +1,11 @@
+[Unit]
+Description=Hangouts Chat bot for Prometheus Alertmanager
+Documentation=https://gitlab.pb.local/cblum/botanist
+After=network.target
+
+[Service]
+User=nobody
+ExecStart=/usr/bin/botanist
+
+[Install]
+WantedBy=multi-user.target

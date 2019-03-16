@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+include /usr/share/dpkg/pkg-info.mk
+
+export DH_GOPKG := gitlab.pb.local/cblum/botanist
+
+BUILDDIR := $(CURDIR)/build
+
+%:
+	dh $@ --buildsystem=golang --with=golang --builddirectory=$(BUILDDIR)
+
+override_dh_auto_test:
+
+override_dh_auto_install:
+	dh_auto_install -- --no-source

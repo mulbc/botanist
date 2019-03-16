@@ -1,0 +1,31 @@
+Source: botanist
+Section: net
+Priority: optional
+Maintainer: Daniel Swarbrick <daniel.swarbrick@cloud.ionos.com>
+Build-Depends: debhelper (>= 11),
+               dh-golang (>= 1.19),
+               golang-github-hashicorp-go-retryablehttp-dev,
+               golang-github-prometheus-alertmanager-dev,
+               golang-github-prometheus-client-golang-dev,
+               golang-github-prometheus-common-dev,
+               golang-github-sirupsen-logrus-dev,
+               golang-go,
+               golang-golang-x-oauth2-dev,
+               golang-golang-x-oauth2-google-dev,
+               golang-google-api-dev (>= 0.0~git20180916),
+               golang-google-cloud-dev,
+               golang-gopkg-yaml.v2-dev
+Standards-Version: 4.3.0
+Homepage: https://gitlab.pb.local/cblum/botanist
+Vcs-Browser: https://gitlab.pb.local/cblum/botanist
+Vcs-Git: https://gitlab.pb.local/cblum/botanist.git
+
+Package: botanist
+Architecture: any
+Depends: daemon | systemd-sysv, ${misc:Depends}, ${shlibs:Depends}
+Built-Using: ${misc:Built-Using}
+Description: Helpful bot for Hangouts Chat
+ This package contains the Botanist -
+ a friendly and very helpful bot that can
+ alert you on Prometheus alerts and do some DCManager
+ calls on your behalf.
